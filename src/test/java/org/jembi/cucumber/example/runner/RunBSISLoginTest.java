@@ -10,5 +10,5 @@ import org.junit.runner.RunWith;
         glue = "org.jembi.cucumber.example.steps",
         features = "src/test/resources/features/login.feature"
 )
-public class RunBSISLoginTests {
+public class RunBSISLoginTest {
 }
