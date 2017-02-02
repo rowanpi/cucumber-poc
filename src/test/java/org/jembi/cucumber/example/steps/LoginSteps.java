@@ -14,17 +14,16 @@ public class LoginSteps {
 
     private static final String BSIS_HOME_PAGE = "http://127.0.0.1:9000/#/home";
     private static final String BSIS_LOGIN_PAGE = "http://127.0.0.1:9000/#/login";
-    private WebDriver driver = null;
+    private WebDriver driver;// = SingleChromeWebDriverHelper.getInstance(false).getDriver();
 
-    @Given("^I navigate to the BSIS login page$")
-    public void i_navigate_to_the_BSIS_login_page() throws Throwable {
-      System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver");
-      driver= new ChromeDriver();
+    @Given("^I open the chrome browser and navigate to the BSIS login page$")
+    public void i_open_the_chrome_browser_and_navigate_to_the_BSIS_login_page() throws Throwable {
+      driver = SingleChromeWebDriverHelper.getInstance(true).getDriver();
       driver.navigate().to(BSIS_LOGIN_PAGE);
       WebDriverWait wait = new WebDriverWait(driver, 15, 100);
       wait.until(AdditionalConditions.angularHasFinishedProcessing());
     }
-
+    
     @When("^I populate the login form$")
     public void i_populate_the_login_form() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
@@ -32,7 +31,7 @@ public class LoginSteps {
       driver.findElement(By.name("username")).sendKeys("superuser");
       driver.findElement(By.name("password")).sendKeys("superuser");
     }
-    
+
     @When("^I click the login button$")
     public void i_click_login_the_login_button() throws Throwable {
       driver.findElement(By.className("btn")).click();
@@ -45,4 +44,11 @@ public class LoginSteps {
         // Write code here that turns the phrase above into concrete actions
       Assert.assertTrue("Not on home page",driver.getCurrentUrl().equals(BSIS_HOME_PAGE));
     }
+
+    @Then("^I close the browser$")
+    public void close_the_browser() throws Throwable {
+      Thread.sleep(3000);
+      driver.close();
+    }
+
 }
