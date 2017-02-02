@@ -1,8 +1,4 @@
-cucumber-jvm-maven
+cucumber-poc
 ==================
 
-Cucumber JVM with Maven application.
-
-See my blog for details:
-
-http://blog.czeczotka.com/2014/07/22/cucumber-jvm-with-maven-in-minutes/
+Cucumber with Maven application. Example app
