@@ -40,7 +40,7 @@ public class DonorSteps {
         Assert.assertTrue("Expected " + donors + " donors", driver.getPageSource().contains(donors +" donor(s) found"));
     }
     
-    @Then("^I should see \"(.*?)\" \"(.*?)\" as an \"(.*?)\"$")
+    @Then("^I should see \"(.*?)\" \"(.*?)\" added as a new \"(.*?)\"$")
     public void i_should_see_as_an(String arg1, String arg2, String arg3) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
       Assert.assertTrue("donor not added sucessfully", driver.findElement(By.xpath("//*[@id=\"wrap\"]/div/div[2]/form/span[1]/span[1]")).getText().contains(arg1));

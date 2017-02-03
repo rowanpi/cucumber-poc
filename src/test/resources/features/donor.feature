@@ -39,4 +39,4 @@ Feature: Donor
       | Venue    | Abuja   |
       | Language | English |
     And I click the "Add Donor" button
-    Then I should see "Donald" "Trump" as an "Eligible donor"
+    Then I should see "Donald" "Trump" added as a new "Eligible donor"
