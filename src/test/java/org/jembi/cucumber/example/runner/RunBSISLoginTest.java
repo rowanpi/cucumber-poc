@@ -8,7 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         format = { "pretty", "html:target/cucumber" },
         glue = "org.jembi.cucumber.example.steps",
-        features = {"src/test/resources/features/login.feature"}//, "src/test/resources/features/login2.feature"}
+        features = {
+            "src/test/resources/features/donor.feature"}//, 
+            //"src/test/resources/features/login2.feature",
+            //"src/test/resources/features/donor.feature"}
 )
 public class RunBSISLoginTest {
 }
